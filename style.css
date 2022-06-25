@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
+:root{
+    --dark: #5A7D7C;
+    --lightest: #DADFF7;
+    --darkest: #232C33;
+    --light: #A0C1D1;
+    --lighter: #B5B2C2;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+/* Main Page */
+.main-page{
+    background-color: var(--light);
+    height: 100vh;
+    width: 100vw;
+}
+    /* Header */
+    .header{
+        background-color: rgba(35, 44, 51);
+        height: 15vh;
+        border-radius: 0 0 1rem 0;
+        width: 100%;
+        position: fixed;
+        z-index: 10;
+    }
+    .right{
+        float: right;
+        width: 70%;
+    }
+    .right .navbar{
+        padding: 1.5rem 5rem 1.5rem 1.5rem;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .menu-trigger{
+        position: absolute;
+        right: 0.5rem;
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+        margin: .25rem .5rem 0 0;
+        transition: all .25s ease-in-out;
+    }
+        /* Menu Bar */
+        .menu-burger{
+            top: 1.5rem;
+            left: .25rem;
+            position: absolute;
+            width: 50px;
+            height: 6px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(255, 101, 47, .2);
+            transition: all .25s ease-in-out;
+            cursor: pointer;
+        }
+        .menu-burger::before,
+        .menu-burger::after{
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 6px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: rgba(255, 101, 47, .2);
+            transition: all .25s ease-in-out;
+        }
+        .menu-burger::before{
+            transform: translateY(-16px);
+        }
+        .menu-burger::after{
+            transform: translateY(16px);
+        }
+        .nav-icons{
+            opacity: 0;
+            transition: all 1s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .nav-icons i{
+            transform: scale(1.5);
+            margin: .5rem;
+            margin-top: 1rem;
+            background-color: white;
+            border-radius: 1rem;
+            padding: .25rem;
+            transition: all .1s ease-in-out;
+        }
+        .menu-trigger.open .nav-icons{
+            padding-top: 2rem;
+            background-color: rgba(255, 255, 255, .1);
+            border-radius: 1rem;
+            height: 20rem;
+            opacity: 1;
+        }
+        .menu-trigger.open i:hover{
+            background-color: black;
+            color: white;
+        }
+        .menu-trigger.open i:hover .nav-icons{
+            color: white;
+        }
+        .menu-trigger.open .menu-burger{
+            background: transparent;
+            box-shadow: none;
+            z-index: 1;
+        }
+        .menu-trigger.open .menu-burger::before{
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+        .menu-trigger.open .menu-burger::after{
+            transform: rotate(-45deg);
+            z-index: 1;
+        }
+        /* Menu Bar */
+    .right .navbar a{
+        margin: 1rem 1rem 1rem 1rem;
+        text-decoration: none;
+        color: var(--lighter);
+        font-size: 1.5rem;
+        font-weight: 500;
+        transition: all .1s ease;
+    }
+    .right .navbar a:hover{
+        color: var(--lightest);
+        transform: scale(1.1);
+    }
+    .left{
+        float: left;
+        width: 30%;
+    }.left > div{
+        background-image: url(/Images/Logo.png);
+        background-size: cover;
+        height: 7rem;
+        width: 7rem;
+    }
+    /* Header */
+    
+    /* Backround Image slider */
+    .background{
+        height: 80vh;
+        border-radius: 0 1rem 0 0;
+        background-color: #5A7D7C;
+        padding: 7rem 0rem 0rem 0rem;
+        display: flex;
+        align-items: center;
+    }
+    .slider-frame{
+        overflow: hidden;
+        height: 80vh;
+        width: 50%;
+        margin: 10rem auto;
+    }
+    .slide-images{
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 -200%;
+        position: relative;
+        -webkit-animation-name: slide_animation;
+        -webkit-animation-duration: 33s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-play-state: running;
+    }
+
+    /* Background Animation */
+    @-webkit-keyframes slide_animation{
+        0% {left: 200%}
+        10% {left: 200%}
+        20% {left: 100%}
+        30% {left: 100%}
+        40% {left: 100%}
+        50% {left: 0%}
+        60% {left: 0%}
+        70% {left: 100%}
+        80% {left: 100%}
+        90% {left: 100%}
+        100% {left: 200%}
+    }
+    .slide-images .img-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .slide-images .img-container .img{
+        width: 50%;
+    }
+    .slide-images .img-container .background-text{
+        width: 50%;
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 100;
+    }
+    .slide-images .img-container .background-text .background-heading{
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .slide-images .img-container img{
+        width: 20rem;
+    }
+    /* Background Animation */
+    /* Backround Image slider */
+/* Main Page */
+
+/* About */
+.about{
+    height: 70vh;
+    background-color: var(--light);
+}
+.about .content-header{
+    background-color: var(--light);
+    font-size: 2rem;
+    font-weight: 300;
+    color: white;
+    padding: 0rem 1rem 1rem 1rem;
+    margin: 0 2rem 2rem 10rem;
+}
+.underline{
+    content: '';
+    position: relative;
+    background-color: white;
+    height: 2px;
+    width: 50px;
+    margin-top: 1rem;
+}
+
+.about .content{
+    display: flex;
+    justify-content: center;
+}
+.about .content .content-heading{
+    width: 33%;
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--darkest);
+}
+.about .content .content-heading .underline-heading{
+    content: '';
+    position: relative;
+    background-color: black;
+    height: 1px;
+    width: 50px;
+    margin-top: 1rem;
+}
+.about .content .content-heading .text{
+    margin: 1rem 0 0 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+/* About */
+
+/* Our Vision */
+.our-vision{
+    height: 70vh;
+    background-color: var(--lightest);
+}
+.our-vision .content-header{
+    background-color: var(--lightest);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--darkest);
+    padding: 5rem 1rem 0rem 1rem;
+    margin: 0 2rem 2rem 10rem;
+}
+.content{
+    height: fit-content;
+}
+.content .img{
+    width: 60%;
+    float: right;
+    justify-content: center;
+    display: flex;
+}
+.content .img img{
+    float: right;
+    transform: scale(0.75);
+}
+.content .vision-text{
+    width: 35%;
+    float: left;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.5rem 0rem 1rem 2rem;
+}
+.content .vision-text button{
+    background: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    height: 2.5rem;
+    width: 60%;
+    background-color: var(--darkest);
+    border-radius: 1rem;
+    color: white;
+    font-size: 1rem;
+    transition: all .2s ease-in-out;
+    margin: 2rem;
+}
+.content .vision-text button:hover{
+    cursor: pointer;
+    background-color:  white;
+    color: var(--darkest);
+    transform: scale(1.1);
+}
+/* Our Vision */
+
+/* The App */
+.app{
+}.app-heading{
+    background-color: #232C33;
+    color: white;
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 2rem 3rem 2rem 11rem;
+}
+.div-head{
+    color: white;
+    font-size: 2.5rem;
+    padding: 1rem 0 2rem 4rem;
+}
+.div-text{
+    color: var(--light);
+    font-size: 1.5rem;
+    padding: 1rem 0 2rem 6rem;
+}
+.divider-1{
+    background-color: #041C32;
+    height: 85vh;
+}
+.divider-1 .div-img{
+    width: 40%;
+    transform: scale(0.75);
+    float: right;
+}
+.divider-2{
+    background-color: #04293A;
+    height: 80vh;
+}
+.divider-2 .div-img{
+    width: 40%;
+    transform: scale(0.75);
+    float: left;
+}
+.divider-2 .div-content .div-head .underline{
+    margin-left: 34.5rem;
+}
+.divider-3{
+    background-color: #041C32;
+    height: 80vh;
+}
+.divider-3 .div-img{
+    width: 40%;
+    transform: scale(0.65);
+    float: right;
+}
+/* The App */
+
+/* Contact Us */
+.contact-us{
+    height: 70vh;
+    background-color: var(--lightest);
+}
+.contact-head{
+    width: 40%;
+    float: left;
+}
+.big{
+    font-size: 2rem;
+    font-weight: 300;
+    color: black;
+    padding: 5rem 1rem 1rem 1rem;
+    margin: 0 2rem 2rem 10rem;
+}
+.big .underline{
+    background-color: black;
+}
+.contact-sub{
+    text-align: center;
+    font-size: 1rem;
+    padding: 0 1rem 1rem 0rem;
+    margin: 0 0 2rem 10rem;
+}
+.contact-form{
+    width: 60%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.form-heading{
+    font-size: 2rem;
+}
+.form-heading .underline{
+    background-color: black;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form input{
+    width: 100%;
+    appearance: none;
+    background-color: var(--light);
+    outline: none;
+    border: none;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+form > div:nth-child(2){
+    width: 50%;
+    justify-content: center;
+}
+/* Contact Us */
