@@ -86,10 +86,8 @@ body{
             align-items: center;
             flex-direction: column;
         }
-        .nav-icons i{
-            transform: scale(1.5);
-            margin: .5rem;
-            margin-top: 1rem;
+        .nav-icons a i{
+            transform: scale(1);
             background-color: white;
             border-radius: 1rem;
             padding: .25rem;
