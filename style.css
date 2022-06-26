@@ -316,6 +316,7 @@ body{
     color: white;
     font-size: 1rem;
     transition: all .2s ease-in-out;
+    font-family: 'IBM Plex Sans', sans-serif;
     margin: 2rem;
 }
 .content .vision-text button:hover{
@@ -428,13 +429,42 @@ form input{
     background-color: var(--light);
     outline: none;
     border: none;
-    padding: 0.25rem;
+    padding: 0.75rem;
     border-radius: 0.25rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: .5rem;
+    transition: all .1s ease;
+    font-family: "IBM Plex Sans", sans-serif;
 }
-form > div:nth-child(2){
-    width: 50%;
-    justify-content: center;
+form input:hover{
+    transform: scale(1.05);
+}
+form input::placeholder{
+    font-family: "IBM Plex Sans", sans-serif;
+    color: var(--lightest);  
+    font-size: 1rem;
+}
+form input:focus{
+    transform: scale(1.1);
+    background-color: #041C32;
+    color: white;
+}
+form > button{
+    appearance: none;
+    outline: none;
+    background-color: var(--darkest);
+    border: none;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    color: white;
+    margin: 1rem;
+    font-size: 1rem;
+    transition: all .25s ease;
+}
+form > button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: var(--darkest);
+    transform: scale(1.25);
 }
 /* Contact Us */
